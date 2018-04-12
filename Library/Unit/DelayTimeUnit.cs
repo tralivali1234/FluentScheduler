@@ -18,6 +18,15 @@
         internal Schedule Schedule { get; private set; }
 
         /// <summary>
+        /// Sets the interval to milliseconds.
+        /// The timing may not be accurated when used with very low intervals.
+        /// </summary>
+        public void Milliseconds()
+        {
+            Schedule.DelayRunFor = TimeSpan.FromMilliseconds(_interval);
+        }
+
+        /// <summary>
         /// Sets the interval to seconds.
         /// </summary>
         public void Seconds()
